@@ -9,12 +9,7 @@ public class Pile2<T> implements PileI<T> {
     /** la capacité de la pile */
     private int capacite;
 
-    /**
-     * Création d'une pile.
-     * 
-     * @param taille
-     *            la taille de la pile
-     */
+    
     public Pile2(int taille) {
         this.stk = new Stack<T>();
         if (taille <= 0)
@@ -50,21 +45,12 @@ public class Pile2<T> implements PileI<T> {
         return stk.empty();
     }
 
-    /**
-     * Effectue un test de l'état de la pile.
-     * 
-     * @return vrai si la pile est pleine, faux autrement
-     */
+    
     public boolean estPleine() {
         return capacite == stk.size();
     }
 
-    /**
-     * Retourne une représentation en String d'une pile, contenant la
-     * représentation en String de chaque élément.
-     * 
-     * @return une représentation en String d'une pile
-     */
+    
     public String toString() {
         String s = "[";
         for (int i = stk.size() - 1; i >= 0; i--) {
@@ -75,20 +61,12 @@ public class Pile2<T> implements PileI<T> {
         return s + "]";
     }
 
-    /**
-     * Retourne la taille de la pile
-     * 
-     * @return cette taille
-     */
+     
     public int taille() {
         return this.stk.size();
     }
 
-    /**
-     * Retourne la taille de la pile
-     * 
-     * @return cette taille
-     */
+    
     public int capacite() {
         return this.capacite;
     }

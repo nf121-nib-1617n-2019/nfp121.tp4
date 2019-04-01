@@ -18,18 +18,14 @@ public class IHMQuestion2_1Test extends junit.framework.TestCase
         try{  
             Class.forName("question2.IHMQuestion2_1");
             Class.forName("question2.JButtonObserver");
-            //Class.forName("question2.JMouseObserver");
+           
         }catch(ClassNotFoundException e){
-            fail("classe absente " + e.getMessage());
+            fail("No class   " + e.getMessage());
         }
     }
 
 
-    /**
-     * Met en place les engagements.
-     *
-     * Méthode appelée avant chaque appel de méthode de test.
-     */
+    
     protected void setUp() throws java.lang.Exception{
         f = new IHMQuestion2_1();
         f.pack();
@@ -38,11 +34,11 @@ public class IHMQuestion2_1Test extends junit.framework.TestCase
         f.setAlwaysOnTop(true);
         f.setLocation(random.nextInt(500), random.nextInt(500));
         robot = new Robot();
-        robot.delay(100);
+        robot.delay(200);
     }
 
-    protected void tearDown(){ // throws java.lang.Exception
-        f.dispose();
+    protected void tearDown(){  
+             f.dispose();
     }
 
     public void test_clic_bouton_A() throws Exception{
@@ -50,7 +46,7 @@ public class IHMQuestion2_1Test extends junit.framework.TestCase
         Component[] components = panel.getComponents();
         assertEquals("ihm invalide ?, ne pas modifier l'interface", components.length, 2);
 
-        // la bonne IHM
+         
         assertTrue("ihm invalide ?, ne pas modifier l'interface", components[0] instanceof JPanel);
         assertTrue("ihm invalide ?, ne pas modifier l'interface", components[1] instanceof TextArea);
 
@@ -113,13 +109,13 @@ public class IHMQuestion2_1Test extends junit.framework.TestCase
 
    
     public void mouseMoveAndClick(int x, int y){
-        robot.mouseMove( x,y);
+                robot.mouseMove( x,y);
 
-        robot.delay(60);
-        robot.mousePress(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
-        robot.mouseRelease(InputEvent.BUTTON1_MASK);
-        robot.delay(60);
-    }//end mouseMoveAndClick
+                        robot.delay(60);
+                        robot.mousePress(InputEvent.BUTTON1_MASK);
+                        robot.delay(60);
+                        robot.mouseRelease(InputEvent.BUTTON1_MASK);
+                         robot.delay(60);
+    } 
 
 }

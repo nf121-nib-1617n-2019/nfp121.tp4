@@ -11,8 +11,11 @@ public class IHMQuestion2_1 extends JFrame {
     private JButton boutonC = new JButton("C");
 
     private TextArea contenu = new TextArea(30, 80);
+    
+    private JButtonObserver but1;
+    private JButtonObserver but2;
+    private JButtonObserver but3;
 
- 
     public IHMQuestion2_1() {
         super("IHM Question2_1");
         JPanel enHaut = new JPanel();
@@ -26,15 +29,23 @@ public class IHMQuestion2_1 extends JFrame {
         enHaut.setBackground(Color.blue);
         setLocation(100,100);
         pack();show();
-
-        // à compléter
-        // le bouton A a 3 observateurs jbo1, jbo2 et jbo3
-
-        // le bouton B a 2 observateurs jbo1 et jbo2
-
-        // le bouton C a 1 observateur jbo1
-
-      
+        
+       
+        
+        but1 = new JButtonObserver("but1", contenu);
+        but2 = new JButtonObserver("but2", contenu);
+        but3 = new JButtonObserver("but3", contenu);
+        
+        boutonA.addActionListener(but1);
+        boutonA.addActionListener(but2);
+        boutonA.addActionListener(but3);
+        
+        boutonB.addActionListener(but1);
+        boutonB.addActionListener(but2);
+        
+        boutonC.addActionListener(but1);
+        
+        
     }
     
     public static void main(String[] args){
